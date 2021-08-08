@@ -16,7 +16,7 @@ h1 {
   font-weight: 400;
   line-height: 25px;
   margin-top: 50px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 ul {
   margin: 0;
@@ -26,11 +26,11 @@ ul {
   color: #70757a;
   list-style: none;
   font-size: 20px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 .current-weather-icon {
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 40px;
   font-size: 44px;
   color: #3c3f42;
 }
