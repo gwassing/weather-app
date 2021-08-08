@@ -23,41 +23,41 @@
         <div class="card-body">
           <form id="search">
             <div class="search">
-              <div class="row justify-content-md-center">
-                <div class="col-6">
-                  <div class="mb-3">
-                    <input
-                      type="search"
-                      class="form-control"
-                      placeholder="Search location"
-                      id="search-input"
-                    />
-                  </div>
+              <div class="row">
+                <div class="col-7">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Search location"
+                    id="search-input"
+                  />
                 </div>
-                <div class="col-1">
+                <div class="col">
                   <button type="submit" class="btn btn-primary">Search</button>
                 </div>
                 <div class="col-3">
                   <button
                     type="submit"
-                    class="btn btn-outline-success"
+                    class="btn btn-outline-primary"
                     id="current-location"
                   >
                     Current location
                   </button>
                 </div>
               </div>
+            </div>
+          </form>
           <h1>Stockholm</h1>
           <ul>
-            <li>Sunday 8th Aug</li>
+            <li class="date">Sunday 8th Aug</li>
           </ul>
-          <div class="row">
-            <div class="col-9">
-              <i class="fas fa-cloud-sun"></i>
+          <div class="row current-weather-overview">
+            <div class="col-7">
+              <i class="fas fa-cloud-sun current-weather-icon"></i>
               <span class="temp">17</span> <span class="units">°C|°F</span>
             </div>
-            <div class="col-3">
-              <ul>
+            <div class="col-5">
+              <ul class="overview-list">
                 <li>Rain</li>
                 <li>Wind: 3 m/s</li>
                 <li>Humidity: 87%</li>
@@ -121,7 +121,14 @@
               </div>
             </div>
           </div>
+          <footer>Last updated <span id="timestamp">16:44</span></footer>
         </div>
+      </div>
+      <div class="signature">
+        <a href="https://github.com/gabyypants/Weather-app" target="_blank"
+          >Open-source code</a
+        >
+        by Gabriela
       </div>
     </div>
     <script src="src/app.js"></script>
