@@ -1,6 +1,6 @@
 body {
   margin-top: 20px;
-  background: linear-gradient(to right, #f8e7d0 0%, #f8d2c6 100%);
+  background: linear-gradient(to right, #f8e7d0 0%, #fadad0 100%);
 }
 .container {
   font-family: "Google Sans", arial, sans-serif;
@@ -52,9 +52,9 @@ ul {
   font-size: 20px;
   margin-left: 40px;
 }
-.current-weather-icon {
-  margin-top: 30px;
-  margin-left: 40px;
+.icon {
+  margin-bottom: 20px;
+  margin-left: 20px;
   font-size: 44px;
   color: #3c3f42;
 }

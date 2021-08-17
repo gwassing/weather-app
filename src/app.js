@@ -40,7 +40,7 @@ let timestamp = document.querySelector("#timestamp");
 timestamp.innerHTML = `${hour}:${minutes}`;
 
 function currentWeather(response) {
-  // console.log(response.data.wind.direction);
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
@@ -53,11 +53,12 @@ function currentWeather(response) {
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  // console.log(city);
-  // console.log(currentTemperature);
-  // console.log(currentDescription);
-  // console.log(currentWind);
-  // console.log(currentHumidity);
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 function search(city) {
   let apiKey = "d4e31f25da5e889fefeac7617a05a07c";
