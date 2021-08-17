@@ -1,6 +1,6 @@
 body {
   margin-top: 20px;
-  background: linear-gradient(to right, #f8e7d0 0%, #fadad0 100%);
+  background-color: #b0cadf;
 }
 .container {
   font-family: "Google Sans", arial, sans-serif;
@@ -18,21 +18,21 @@ body {
 }
 
 .btn-primary {
-  background-color: #e9a087;
-  border-color: #e9a087;
+  background-color: #3b5268;
+  border-color: #3b5268;
 }
 .btn-primary:hover {
-  background-color: #cf7e63;
-  border-color: #cf7e63;
+  background-color: #6486a3;
+  border-color: #6486a3;
 }
 .btn-outline-primary {
-  color: #e9a087;
-  border-color: #e9a087;
+  color: #3b5268;
+  border-color: #3b5268;
 }
 .btn-outline-primary:hover {
   color: white;
-  background-color: #e9a087;
-  border-color: #e9a087;
+  background-color: #3b5268;
+  border-color: #3b5268;
 }
 h1 {
   color: #3c3f42;
