@@ -1,6 +1,6 @@
 body {
   margin-top: 20px;
-  background-color: #f3f1f1;
+  background: linear-gradient(to right, #f8e7d0 0%, #f8d2c6 100%);
 }
 .container {
   font-family: "Google Sans", arial, sans-serif;
@@ -8,11 +8,31 @@ body {
   margin: 0 auto;
 }
 .card {
-  background-color: #fffdfb;
+  background-color: #fdfdff;
+  border: none;
+  border-radius: 8px;
 }
 .search {
   margin-top: 35px;
   margin-left: 55px;
+}
+
+.btn-primary {
+  background-color: #e9a087;
+  border-color: #e9a087;
+}
+.btn-primary:hover {
+  background-color: #cf7e63;
+  border-color: #cf7e63;
+}
+.btn-outline-primary {
+  color: #e9a087;
+  border-color: #e9a087;
+}
+.btn-outline-primary:hover {
+  color: white;
+  background-color: #e9a087;
+  border-color: #e9a087;
 }
 h1 {
   color: #3c3f42;
