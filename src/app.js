@@ -40,6 +40,8 @@ let timestamp = document.querySelector("#timestamp");
 timestamp.innerHTML = `${hour}:${minutes}`;
 
 function currentWeather(response) {
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temp");
   let descriptionElement = document.querySelector("#description");
