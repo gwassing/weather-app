@@ -39,9 +39,35 @@ date.innerHTML = `${currentDay} ${currentDate}th ${currentMonth}`;
 let timestamp = document.querySelector("#timestamp");
 timestamp.innerHTML = `${hour}:${minutes}`;
 
+function displayForecast() {
+  forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col">
+          <div class="card forecast">
+            <div class="card-body">
+              <div class="forecast-day">${day}</div>
+              <div class="forecast-temperatures">
+                <span class="forecast-temperature-max">26°</span>/
+                <span class="forecast-temperature-min">14°</span>
+              </div>
+              <i class="fas fa-sun forecast"></i>
+            </div>
+          </div>
+        </div>
+      
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function currentWeather(response) {
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temp");
   let descriptionElement = document.querySelector("#description");
@@ -55,6 +81,9 @@ function currentWeather(response) {
   descriptionElement.innerHTML = response.data.weather[0].main;
   windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s `;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 
   document
     .querySelector("#icon")
@@ -116,3 +145,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 let celsiusTemperature = null;
 
 search("Stockholm");
+displayForecast();
