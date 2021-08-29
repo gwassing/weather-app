@@ -40,7 +40,7 @@ h1 {
   font-weight: 400;
   line-height: 25px;
   margin-top: 50px;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 ul {
   margin: 0;
@@ -50,11 +50,11 @@ ul {
   color: #70757a;
   list-style: none;
   font-size: 20px;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 .icon {
   margin-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 30px;
   font-size: 44px;
   color: #3c3f42;
 }
@@ -73,19 +73,17 @@ ul {
   margin-bottom: 40px;
 }
 .overview-list {
+  color: #70757a;
   list-style: none;
-  margin-left: 20px;
+  margin-left: 80px;
   margin-top: 20px;
   font-size: 18px;
 }
 .card.forecast {
   text-align: center;
+  margin-top: -15px;
 }
 
-i.forecast {
-  font-size: 36px;
-  padding: 0px 0px 20px 0px;
-}
 footer {
   margin-top: 10px;
   font-size: 12px;
@@ -102,4 +100,8 @@ footer {
 .active:hover {
   text-decoration: none;
   color: #3c3f42;
+}
+.forecast-temperature-min,
+.forecast-day {
+  color: #70757a;
 }
