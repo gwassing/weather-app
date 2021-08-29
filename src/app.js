@@ -39,30 +39,47 @@ date.innerHTML = `${currentDay} ${currentDate}th ${currentMonth}`;
 let timestamp = document.querySelector("#timestamp");
 timestamp.innerHTML = `${hour}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
-  forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-        <div class="col">
+  // let days = ["Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="col-2">
           <div class="card forecast">
             <div class="card-body">
-              <div class="forecast-day">${day}</div>
+              <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
               <div class="forecast-temperatures">
-                <span class="forecast-temperature-max">26°</span>/
-                <span class="forecast-temperature-min">14°</span>
+                <span class="forecast-temperature-max">${Math.round(
+                  forecastDay.temp.max
+                )}°</span>/
+                <span class="forecast-temperature-min">${Math.round(
+                  forecastDay.temp.min
+                )}°</span>
               </div>
-              <i class="fas fa-sun forecast"></i>
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"/>
             </div>
           </div>
         </div>
       
   `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -86,7 +103,6 @@ function currentWeather(response) {
   let humidityElement = document.querySelector("#humidity");
 
   celsiusTemperature = response.data.main.temp;
-
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = response.data.weather[0].main;
